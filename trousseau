@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trousseau — Séjour Japon 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --ink: #0e0e0e;
+    --red: #c0392b;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #faf7f2;
+    --border: #e3ddd1;
+    --soft: #6b6560;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 48px 16px 80px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 50px rgba(14,14,14,0.07);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 52px 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -90px; right: -70px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,57,43,0.35), transparent 70%);
+  }
+
+  .header::after {
+    content: '⛩';
+    position: absolute;
+    bottom: -10px; right: 34px;
+    font-size: 120px;
+    opacity: 0.07;
+    color: var(--gold-light);
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: #cfc9be;
+    max-width: 460px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .meta-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a39d92;
+    margin-bottom: 3px;
+  }
+
+  .meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  /* PROGRESS BAR */
+  .progress-wrap {
+    background: var(--cream);
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    transition: width 0.35s ease;
+  }
+
+  #progress-text {
+    font-size: 12.5px;
+    color: var(--soft);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  /* BODY */
+  .body {
+    padding: 8px 48px 12px;
+  }
+
+  .intro {
+    padding: 28px 0 20px;
+    border-bottom: 1px dashed var(--border);
+    font-size: 14.5px;
+    color: var(--soft);
+    line-height: 1.65;
+  }
+
+  .intro strong { color: var(--ink); }
+
+  .section {
+    padding: 32px 0 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .section-icon {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+  }
+
+  .section-note {
+    font-size: 12.5px;
+    color: var(--soft);
+    margin-left: auto;
+    text-align: right;
+    font-style: italic;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .body, .header, .progress-wrap { padding-left: 24px; padding-right: 24px; }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .item:hover { background: var(--cream); }
+
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1.5px solid var(--soft);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.15s;
+  }
+
+  .item.checked .checkbox {
+    background: var(--red);
+    border-color: var(--red);
+  }
+
+  .item.checked .checkbox::after {
+    content: '';
+    position: absolute;
+    left: 5px; top: 1px;
+    width: 5px; height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .item-text {
+    font-size: 14.5px;
+    color: var(--ink);
+    flex: 1;
+  }
+
+  .item.checked .item-text {
+    color: var(--soft);
+    text-decoration: line-through;
+  }
+
+  .item-note {
+    font-size: 12px;
+    color: var(--soft);
+    font-style: italic;
+  }
+
+  .item-qty {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    background: rgba(201,168,76,0.13);
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  /* FUJI CALLOUT */
+  .fuji-box {
+    margin-top: 6px;
+    background: linear-gradient(135deg, rgba(192,57,43,0.06), rgba(201,168,76,0.08));
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px 18px;
+    font-size: 13px;
+    color: var(--soft);
+    line-height: 1.6;
+  }
+
+  .fuji-box strong { color: var(--ink); }
+
+  /* REMINDERS */
+  .reminder {
+    margin: 28px 0 36px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 6px;
+    padding: 26px 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reminder::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: -50px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(192,57,43,0.25);
+  }
+
+  .reminder-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .reminder ul {
+    list-style: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  .reminder li {
+    font-size: 13.5px;
+    line-height: 1.5;
+    padding: 6px 0 6px 20px;
+    position: relative;
+    color: #e8e3d8;
+  }
+
+  .reminder li::before {
+    content: '⛩';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-size: 12px;
+  }
+
+  .reminder li strong { color: var(--gold-light); }
+
+  /* FOOTER */
+  .footer {
+    padding: 24px 48px 36px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--soft);
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">Colonie de vacances · CIE Thales</div>
+    <h1>Trousseau<br><em>Japon 2026</em></h1>
+    <div class="header-sub">Liste de bagages à préparer pour le séjour. Merci de cocher chaque élément au fur et à mesure pour ne rien oublier.</div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <div class="meta-label">Dates</div>
+        <div class="meta-value">7 → 26 août 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Durée</div>
+        <div class="meta-value">19 nuits</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Étapes</div>
+        <div class="meta-value">Tokyo · Osaka/Kyoto · Hiroshima · Fuji</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="bar-track"><div class="bar-fill" id="bar-fill"></div></div>
+    <div id="progress-text">0 / 0 articles cochés</div>
+  </div>
+
+  <div class="body">
+
+    <div class="intro">
+      Le séjour dure <strong>19 nuits</strong> avec plusieurs villes et un climat chaud et humide (30-35°C en août), sauf lors de <strong>l'ascension du Mont Fuji</strong> où les températures chutent fortement en altitude.
+    </div>
+
+    <!-- VÊTEMENTS -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">👕</span>
+        <span class="section-title">Vêtements</span>
+        <span class="section-note">climat chaud &amp; humide</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">T-shirts légers / manches courtes</span><span class="item-qty">×8</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Shorts / pantalons légers</span><span class="item-qty">×5</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Sous-vêtements</span><span class="item-qty">×10</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Paires de chaussettes</span><span class="item-qty">×10</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Pyjama / tenue de nuit</span><span class="item-qty">×2</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Tenue correcte pour temples/sanctuaires</span><span class="item-note">(épaules/genoux couverts)</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Maillot de bain</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Casquette ou chapeau</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Veste imperméable légère</span><span class="item-note">(saison des pluies possible)</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Petit sac de linge sale</span></div>
+      </div>
+    </div>
+
+    <!-- CHAUSSURES -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">👟</span>
+        <span class="section-title">Chaussures</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Chaussures de marche confortables et déjà "faites"</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Sandales / claquettes</span><span class="item-note">(douche, intérieur)</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Chaussures fermées de randonnée</span><span class="item-note">(recommandé pour le Fuji)</span></div>
+      </div>
+    </div>
+
+    <!-- ASCENSION MONT FUJI -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">🗻</span>
+        <span class="section-title">Spécial Mont Fuji</span>
+        <span class="section-note">19 août — sac de jour dédié</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Petit sac à dos de randonnée</span><span class="item-note">15-20L</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Polaire ou doudoune compressible</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Coupe-vent imperméable</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Bonnet et gants fins</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Lampe frontale + piles de rechange</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Gourde / poche à eau</span><span class="item-note">1,5L minimum</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Espèces en petites coupures</span><span class="item-note">2000¥ environ (accès, ravitaillement)</span></div>
+      </div>
+      <div class="fuji-box">
+        <strong>À savoir :</strong> il fait entre 5°C et 10°C en altitude même en plein été — l'écart de température avec la ville est important. Les superpositions de couches sont plus efficaces qu'un seul gros vêtement.
+      </div>
+    </div>
+
+    <!-- HYGIÈNE -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">🧼</span>
+        <span class="section-title">Hygiène &amp; toilette</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Brosse à dents + dentifrice</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Gel douche / shampoing format voyage</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Déodorant</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Petite serviette à séchage rapide</span><span class="item-note">utile en hostel</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Crème solaire</span><span class="item-note">indice élevé</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Mouchoirs en papier / lingettes</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Protections périodiques si besoin</span></div>
+      </div>
+    </div>
+
+    <!-- SANTÉ -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">💊</span>
+        <span class="section-title">Santé &amp; pharmacie</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Traitements personnels en cours</span><span class="item-note">+ ordonnance</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Carte vitale / attestation</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Anti-moustique</span><span class="item-note">recommandé en été</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Paracétamol / antidiarrhéique de base</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Pansements / désinfectant</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Anti-mal des transports</span><span class="item-note">si sensible</span></div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTS & ARGENT -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">🪪</span>
+        <span class="section-title">Documents &amp; argent</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Passeport valide</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Autorisation de sortie du territoire</span><span class="item-note">+ copie CNI du parent</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Argent de poche en yens (espèces)</span><span class="item-note">le Japon reste très cash</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Carte bancaire jeune si disponible</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Photocopie des papiers</span><span class="item-note">séparée des originaux</span></div>
+      </div>
+    </div>
+
+    <!-- ÉLECTRONIQUE -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">🔌</span>
+        <span class="section-title">Électronique</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Téléphone + chargeur</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Adaptateur prise japonaise type A</span><span class="item-note">100V, fiche plate 2 broches</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Batterie externe</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Écouteurs / casque</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">eSIM ou forfait data international activé</span></div>
+      </div>
+    </div>
+
+    <!-- DIVERS -->
+    <div class="section">
+      <div class="section-head">
+        <span class="section-icon">🎒</span>
+        <span class="section-title">Divers &amp; accessoires</span>
+      </div>
+      <div class="grid">
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Petit cadenas</span><span class="item-note">bagage / casier</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Gourde réutilisable</span><span class="item-note">distributeurs partout</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Sac à dos pour les journées</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Carnet / livre pour les trajets en Shinkansen</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Sacs plastiques pour le linge sale</span><span class="item-qty">×3</span></div>
+        <div class="item" onclick="toggle(this)"><div class="checkbox"></div><span class="item-text">Étiquette nominative sur le bagage principal</span></div>
+      </div>
+    </div>
+
+    <!-- RAPPELS -->
+    <div class="reminder">
+      <div class="reminder-title">À ne pas oublier au dernier moment</div>
+      <ul>
+        <li><strong>Prise japonaise type A</strong> (2 broches plates, 100V) — différente de la prise française.</li>
+        <li>Le Japon fonctionne encore beaucoup en <strong>espèces</strong> — prévoir des yens dès l'arrivée, tous les commerces ne prennent pas la carte.</li>
+        <li>Médicaments et ordonnances dans le <strong>bagage cabine</strong>, jamais en soute.</li>
+        <li>Tenue couvrante à prévoir pour les visites de <strong>temples et sanctuaires</strong>.</li>
+        <li>Vérifier la validité du passeport avant de faire les bagages.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Séjour Japon — 7 au 26 août 2026 · Pour toute question, contactez l'encadrant
+    <div class="footer-logo">⛩ Japon 2026</div>
+  </div>
+
+</div>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const all = document.querySelectorAll('.item');
+    const checked = document.querySelectorAll('.item.checked');
+    const total = all.length;
+    const done = checked.length;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    document.getElementById('progress-text').textContent = `${done} / ${total} articles cochés`;
+    document.getElementById('bar-fill').style.width = pct + '%';
+  }
+
+  updateProgress();
+</script>
+
+</body>
+</html>
