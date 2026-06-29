@@ -54,42 +54,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,14,14,0.9
 .timeline-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
 .timeline-inner .section-title{color:#fff;}
 .timeline-inner .section-tag{color:var(--gold);}
-.tl-track{display:flex;overflow-x:auto;gap:0;padding-bottom:24px;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.25) transparent;}
+.tl-track{display:flex;overflow-x:auto;gap:0;padding-bottom:24px;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,.67) transparent;}
 .tl-track::-webkit-scrollbar{height:3px;}
-.tl-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:2px;}
+.tl-track::-webkit-scrollbar-thumb{background:rgba(201,168,76,.67);border-radius:2px;}
 .tl-item{flex:0 0 auto;min-width:110px;position:relative;padding:0 0 28px;}
-.tl-item::before{content:'';position:absolute;top:20px;left:0;right:0;height:1px;background:rgba(201,168,76,.2);}
+.tl-item::before{content:'';position:absolute;top:20px;left:0;right:0;height:1px;background:rgba(201,168,76,.67);}
 .tl-item:first-child::before{left:50%;}
 .tl-item:last-child::before{right:50%;}
 .tl-dot{width:11px;height:11px;border-radius:50%;margin:14px auto 10px;border:2px solid var(--ink);position:relative;z-index:1;}
-.tl-dot.tokyo{background:#e88a82;box-shadow:0 0 0 3px rgba(232,138,130,.2);}
-.tl-dot.osaka{background:#7aabdd;box-shadow:0 0 0 3px rgba(122,171,221,.2);}
-.tl-dot.kyoto{background:#d4b56a;box-shadow:0 0 0 3px rgba(212,181,106,.2);}
-.tl-dot.hiroshima{background:#7fcc96;box-shadow:0 0 0 3px rgba(127,204,150,.2);}
-.tl-dot.fuji{background:#a8cce0;box-shadow:0 0 0 3px rgba(168,204,224,.2);}
+.tl-dot.tokyo{background:#e88a82;box-shadow:0 0 0 3px rgba(232,138,130,.67);}
+.tl-dot.osaka{background:#7aabdd;box-shadow:0 0 0 3px rgba(122,171,221,.67);}
+.tl-dot.kyoto{background:#d4b56a;box-shadow:0 0 0 3px rgba(212,181,106,.67);}
+.tl-dot.hiroshima{background:#7fcc96;box-shadow:0 0 0 3px rgba(127,204,150,.67);}
+.tl-dot.fuji{background:#a8cce0;box-shadow:0 0 0 3px rgba(168,204,224,.67);}
 .tl-dot.voyage{background:rgba(255,255,255,.25);}
-.tl-label{text-align:center;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.3);margin-bottom:3px;}
+.tl-label{text-align:center;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.67);margin-bottom:3px;}
 .tl-city{text-align:center;font-size:11px;font-weight:500;letter-spacing:.5px;}
 .tl-city.tokyo{color:#e88a82;}
 .tl-city.osaka{color:#7aabdd;}
 .tl-city.kyoto{color:#d4b56a;}
 .tl-city.hiroshima{color:#7fcc96;}
 .tl-city.fuji{color:#a8cce0;}
-.tl-city.voyage{color:rgba(255,255,255,.3);}
-.tl-quartier{font-size:9px;letter-spacing:.5px;color:rgba(255,255,255,.80);text-align:center;margin-top:3px;line-height:1.3;max-width:90px;}
-.tl-hint{font-size:11px;color:rgba(255,255,255,.22);letter-spacing:1px;margin-top:6px;margin-bottom:36px;}
+.tl-city.voyage{color:rgba(255,255,255,.67);}
+.tl-quartier{font-size:9px;letter-spacing:.5px;color:rgba(255,255,255,.67);text-align:center;margin-top:3px;line-height:1.3;max-width:90px;}
+.tl-hint{font-size:11px;color:rgba(255,255,255,.67);letter-spacing:1px;margin-top:6px;margin-bottom:36px;}
 .tl-cta{display:flex;flex-wrap:wrap;gap:10px;}
 .tl-btn{padding:10px 22px;border-radius:100px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .22s;border:1px solid;font-family:'DM Sans',sans-serif;display:inline-block;}
-.tl-btn.tokyo{color:#e88a82;border-color:rgba(232,138,130,.4);background:rgba(232,138,130,.07);}
+.tl-btn.tokyo{color:#e88a82;border-color:rgba(232,138,130,.67);background:rgba(232,138,130,.07);}
 .tl-btn.tokyo:hover{background:rgba(232,138,130,.18);}
-.tl-btn.osaka{color:#7aabdd;border-color:rgba(122,171,221,.4);background:rgba(122,171,221,.07);}
+.tl-btn.osaka{color:#7aabdd;border-color:rgba(122,171,221,.67);background:rgba(122,171,221,.07);}
 .tl-btn.osaka:hover{background:rgba(122,171,221,.18);}
-.tl-btn.kyoto{color:#d4b56a;border-color:rgba(212,181,106,.4);background:rgba(212,181,106,.07);}
+.tl-btn.kyoto{color:#d4b56a;border-color:rgba(212,181,106,.67);background:rgba(212,181,106,.07);}
 .tl-btn.kyoto:hover{background:rgba(212,181,106,.18);}
-.tl-btn.hiroshima{color:#7fcc96;border-color:rgba(127,204,150,.4);background:rgba(127,204,150,.07);}
+.tl-btn.hiroshima{color:#7fcc96;border-color:rgba(127,204,150,.67);background:rgba(127,204,150,.07);}
 .tl-btn.hiroshima:hover{background:rgba(127,204,150,.18);}
-.tl-btn.fuji{color:#a8cce0;border-color:rgba(168,204,224,.4);background:rgba(168,204,224,.07);}
-.tl-btn.fuji:hover{background:rgba(168,204,224,.18);}
+.tl-btn.fuji{color:#a8cce0;border-color:rgba(168,204,224,.67);background:rgba(168,204,224,.07);}
+.tl-btn.fuji:hover{background:rgba(168,204,224,.67);}
 .city-section{scroll-margin-top:56px;}
 .city-hero{position:relative;height:560px;overflow:hidden;display:flex;align-items:flex-end;}
 .city-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.52);transition:transform .8s ease;}
@@ -380,9 +380,9 @@ footer strong{color:var(--gold);display:block;font-family:'Cormorant Garamond',s
       <div class="tl-item"><div class="tl-label">15 août</div><div class="tl-dot kyoto"></div><div class="tl-city kyoto">Nara + Osaka</div><div class="tl-quartier">Journée</div></div>
       <div class="tl-item"><div class="tl-label">16 août</div><div class="tl-dot osaka"></div><div class="tl-city osaka">Hiroshima</div></div>
       <div class="tl-item"><div class="tl-label">17 août</div><div class="tl-dot hiroshima"></div><div class="tl-city hiroshima">Miyajima</div></div>
-      <div class="tl-item"><div class="tl-label">18 août</div><div class="tl-dot hiroshima"></div><div class="tl-city hiroshima">Hiroshima to Fuji</div></div>
+      <div class="tl-item"><div class="tl-label">18 août</div><div class="tl-dot hiroshima"></div><div class="tl-city hiroshima">Hiroshima & Fuji</div></div>
       <div class="tl-item"><div class="tl-label">19 août</div><div class="tl-dot fuji"></div><div class="tl-city fuji">Mont Fuji</div><div class="tl-quartier">Ascension 🗻</div></div>
-      <div class="tl-item"><div class="tl-label">20 août</div><div class="tl-dot tokyo"></div><div class="tl-city tokyo">Tokyo</div><div class="tl-quartier">Fuji to Shinjuku</div></div>
+      <div class="tl-item"><div class="tl-label">20 août</div><div class="tl-dot tokyo"></div><div class="tl-city tokyo">Tokyo</div><div class="tl-quartier">Shinjuku</div></div>
       <div class="tl-item"><div class="tl-label">21 août</div><div class="tl-dot tokyo"></div><div class="tl-city tokyo">Tokyo</div><div class="tl-quartier">Kamakura</div></div>
       <div class="tl-item"><div class="tl-label">22 août</div><div class="tl-dot tokyo"></div><div class="tl-city tokyo">Tokyo</div><div class="tl-quartier">Shibuya · Harajuku</div></div>
       <div class="tl-item"><div class="tl-label">23 août</div><div class="tl-dot tokyo"></div><div class="tl-city tokyo">Tokyo</div><div class="tl-quartier">Quartier mystère</div></div>
