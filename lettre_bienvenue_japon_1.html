@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lettre de bienvenue — Séjour Japon 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #1A1A2E;
+    --crimson: #B5294E;
+    --gold:    #C9943A;
+    --mist:    #EDE8E0;
+    --paper:   #FAF7F2;
+    --white:   #FFFFFF;
+    --soft:    #7A6E65;
+  }
+
+  body {
+    background: var(--mist);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1rem 5rem;
+  }
+
+  .wrapper {
+    max-width: 720px;
+    width: 100%;
+  }
+
+  /* ── Top stamp ─────────────────────────────────── */
+  .stamp-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stamp {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .stamp-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--soft);
+  }
+
+  .stamp-label strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  /* ── Paper card ────────────────────────────────── */
+  .card {
+    background: var(--paper);
+    border-radius: 2px;
+    padding: 3.5rem 4rem 3rem;
+    position: relative;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.04),
+      0 8px 32px rgba(0,0,0,0.08),
+      inset 0 0 0 1px rgba(0,0,0,0.04);
+  }
+
+  /* Crimson left border accent */
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--crimson) 0%, var(--gold) 100%);
+    border-radius: 2px 0 0 2px;
+  }
+
+  /* ── Date + heading ────────────────────────────── */
+  .date-line {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .heading em {
+    color: var(--crimson);
+    font-style: italic;
+  }
+
+  .sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--soft);
+    font-style: italic;
+    margin-bottom: 2.2rem;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 2.2rem;
+    border: none;
+  }
+
+  /* ── Body text ─────────────────────────────────── */
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.82;
+    color: #2E2B28;
+  }
+
+  .body-text p {
+    margin-bottom: 1.4rem;
+  }
+
+  .body-text p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  /* Inline highlight */
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, rgba(201,148,58,0.22) 60%);
+    font-weight: 500;
+    padding: 0 1px;
+  }
+
+  /* ── Pull-quote / key moments ──────────────────── */
+  .moments {
+    margin: 2.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .moment {
+    background: var(--white);
+    border-radius: 2px;
+    padding: 1.1rem 1.2rem;
+    border-left: 3px solid var(--crimson);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .moment-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .moment-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .moment-text strong {
+    display: block;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  /* ── Signature ─────────────────────────────────── */
+  .sig-block {
+    margin-top: 2.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .sig-closing {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--soft);
+    margin-bottom: 1.2rem;
+  }
+
+  .sig-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .sig-role {
+    font-size: 0.8rem;
+    color: var(--soft);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+  }
+
+  .sig-team {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--soft);
+    line-height: 1.7;
+  }
+
+  /* ── Footer ────────────────────────────────────── */
+  .footer {
+    margin-top: 1.8rem;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--soft);
+  }
+
+  .footer span {
+    color: var(--crimson);
+    margin: 0 0.5rem;
+  }
+
+  /* ── Japanese kana watermark ───────────────────── */
+  .kana {
+    position: absolute;
+    right: 3.5rem;
+    top: 2.5rem;
+    font-size: 4.5rem;
+    line-height: 1;
+    color: rgba(0,0,0,0.04);
+    font-family: serif;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 600px) {
+    .card { padding: 2.5rem 1.6rem 2rem; }
+    .moments { grid-template-columns: 1fr; }
+    .kana { display: none; }
+    .heading { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Stamp header -->
+  <div class="stamp-row">
+    <svg class="stamp" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="28" cy="28" r="27" stroke="#B5294E" stroke-width="1.5" stroke-dasharray="4 2"/>
+      <text x="28" y="22" text-anchor="middle" font-family="serif" font-size="14" fill="#B5294E">🗻</text>
+      <text x="28" y="34" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="5.5" font-weight="500" letter-spacing="1" fill="#B5294E">JAPON</text>
+      <text x="28" y="41" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="5" letter-spacing="0.5" fill="#C9943A">2026</text>
+    </svg>
+    <div class="stamp-label">
+      Séjour CIE Thales
+      <strong>7 – 26 août 2026</strong>
+    </div>
+  </div>
+
+  <!-- Letter card -->
+  <div class="card">
+
+    <!-- Kana watermark: 日本 (Nihon = Japon) -->
+    <div class="kana" aria-hidden="true">日本</div>
+
+    <div class="date-line">Été 2026 — À vous, les voyageurs</div>
+
+    <h1 class="heading">
+      Bienvenue dans<br><em>l'aventure japonaise</em>
+    </h1>
+    <p class="sub">19 jours. 20 aventuriers. Un pays qui n'oublie pas.</p>
+    <hr class="divider">
+
+    <div class="body-text">
+
+      <p>
+        Bonjour à toutes et à tous,
+      </p>
+
+      <p>
+        Dans quelques semaines, vous allez poser le pied sur un sol qui a fasciné le monde entier pendant des siècles. 
+        Le Japon n'est pas une destination comme les autres — c'est un pays qui se vit, qui s'écoute, qui se ressent. 
+        Et vous avez la chance incroyable de l'explorer ensemble, pendant <span class="highlight">19 jours inoubliables</span>.
+      </p>
+
+      <p>
+        Du 7 au 26 août, vous allez traverser ce pays de part en part : les ruelles animées de Tokyo, 
+        les temples millénaires de Kyoto, les rues gourmandes d'Osaka, le silence bouleversant d'Hiroshima, 
+        la majesté de l'île de Miyajima… et pour finir en beauté, 
+        <span class="highlight">l'ascension du Mont Fuji</span>, le toit du Japon à 3 776 mètres d'altitude.
+      </p>
+
+      <!-- Key moments grid -->
+      <div class="moments">
+        <div class="moment">
+          <div class="moment-icon">⛩️</div>
+          <div class="moment-text">
+            <strong>Culture & découverte</strong>
+            Temples, cerf-volants, arts martiaux, cuisine — le Japon révèle une nouvelle surprise à chaque coin de rue.
+          </div>
+        </div>
+        <div class="moment">
+          <div class="moment-icon">🗻</div>
+          <div class="moment-text">
+            <strong>Défi personnel</strong>
+            Gravir le Mont Fuji ensemble, c'est l'un de ces souvenirs qu'on raconte toute sa vie.
+          </div>
+        </div>
+        <div class="moment">
+          <div class="moment-icon">🤝</div>
+          <div class="moment-text">
+            <strong>Amitié & équipe</strong>
+            Vous êtes 20 — et c'est exactement le bon nombre pour construire des liens qui durent.
+          </div>
+        </div>
+        <div class="moment">
+          <div class="moment-icon">🛡️</div>
+          <div class="moment-text">
+            <strong>Encadrement & confiance</strong>
+            Une équipe soudée vous accompagne à chaque étape, pour que vous puissiez profiter pleinement.
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Ce séjour ne ressemble à aucun autre parce que vous ne ressemblez à aucun autre groupe. 
+        Vous venez avec vos personnalités, vos envies, vos forces — et c'est exactement ce qui va rendre 
+        cette aventure unique. Le Japon a quelque chose de particulier : il vous oblige à ralentir, 
+        à observer, à vous laisser surprendre. Laissez-vous faire.
+      </p>
+
+      <p>
+        Quelques mots sur l'esprit de ce séjour : nous sommes une équipe, pas un groupe de touristes. 
+        Ça veut dire qu'on se soutient, qu'on partage, qu'on s'émerveille ensemble — et qu'on prend soin 
+        les uns des autres. Le Japon est un pays de respect et de bienveillance. 
+        En adoptant cet état d'esprit dès maintenant, vous commencerez le voyage avant même d'avoir pris l'avion.
+      </p>
+
+      <p>
+        D'ici le départ, préparez-vous : lisez sur le pays, écoutez de la musique japonaise, 
+        regardez un film de Miyazaki, apprenez à dire <em>arigatō gozaimasu</em> (merci beaucoup) 
+        et <em>sumimasen</em> (excusez-moi) — deux mots qui vous ouvriront toutes les portes là-bas. 
+        Et surtout, préparez-vous à être étonnés par des choses que vous n'imaginez même pas encore.
+      </p>
+
+      <p>
+        Nous avons hâte de vivre cette aventure avec vous. Le compte à rebours est lancé. 🇯🇵
+      </p>
+
+    </div>
+
+    <!-- Signature -->
+    <div class="sig-block">
+      <p class="sig-closing">Avec enthousiasme et impatience,</p>
+      <div class="sig-name">L'équipe d'encadrement</div>
+      <div class="sig-role">Séjour Japon 2026 · CIE Thales</div>
+      <div class="sig-team">
+        Onur (directeur) &nbsp;·&nbsp; Yasmina &nbsp;·&nbsp; Makram &nbsp;·&nbsp; Selma
+      </div>
+    </div>
+
+  </div><!-- /card -->
+
+  <div class="footer">
+    Tokyo <span>·</span> Kyoto <span>·</span> Osaka <span>·</span> Hiroshima <span>·</span> Mont Fuji
+  </div>
+
+</div>
+</body>
+</html>
